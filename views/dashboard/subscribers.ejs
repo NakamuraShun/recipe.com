@@ -1,0 +1,91 @@
+<%- include("../partials/_header-dashboard") %>
+
+
+
+<!-- ================ header: #Header ================  -->
+<header id="Header" class="bg-secandary">
+	<div class="container py-4 mb-4">
+		<h1>
+			<i class="fas fa-rss-square"></i> メルマガ登録の管理</h1>
+	</div><!-- /.container -->
+</header><!-- /#Header -->
+
+<!-- flashes  -->
+<div class="container">
+	<% if(flashMsg.success){ %>
+	<div class="alert alert-success" role="alert">
+		<%= flashMsg.success %>
+		<button type="button" class="ml-2 mb-1 close" data-dismiss="alert" aria-label="閉じる">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<% }else if(flashMsg.error){ %>
+	<div class="alert alert-danger" role="alert">
+		<%= flashMsg.error %>
+		<button type="button" class="ml-2 mb-1 close" data-dismiss="alert" aria-label="閉じる">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<% } %>
+</div>
+
+
+<!-- ================ section:#subscribers-list ================  -->
+<section id="subscribers-list" class="mb-5">
+	<div class="container">
+		<div class="row">
+
+			<!-- **** #Dashboard-list ****  -->
+			<div class="col" id="Dashboard-list">
+				<div class="card">
+					<div class="card-header">
+						<h4>購読者一覧</h4>
+					</div>
+					<div class="card-body table-responsive p-0">
+						<table class="table text-nowrap table-striped">
+							<thead class="bg-warning text-light text-center">
+								<tr>
+									<th>購読者ID</th>
+									<th>名前</th>
+									<th>メールアドレス</th>
+									<th></th>
+									<th></th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody class="text-center">
+								<% subscribers.forEach( subscriber =>{ %>
+								<tr>
+									<td><%= subscriber._id %></td>
+									<td><%= subscriber.name %></td>
+									<td><%= subscriber.email %></td>
+									<td>
+										<a href="<%= `/dashboard/subscribers/${subscriber._id}` %>"
+											class="btn btn-outline-secondary">詳細</a>
+									</td>
+									<td>
+										<a href="<%= `/dashboard/subscribers/${subscriber._id}/edit` %>"
+											class="btn btn-outline-primary">編集</a>
+									</td>
+									<td>
+										<a href="<%= `/dashboard/subscribers/${subscriber._id}/delete?_method=DELETE` %>"
+											class="btn btn-outline-danger DeleteBtn">削除</a>
+									</td>
+								</tr>
+								<% }); %>
+							</tbody>
+						</table>
+					</div>
+					<div class="card-footer">
+						<div>
+							<a href="/dashboard">＜ ダッシュボードトップに戻る</a>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.col #Dashboard-list -->
+
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</section><!-- /#subscribers-list  -->
+
+<%- include("../partials/_footer-dashboard") %>

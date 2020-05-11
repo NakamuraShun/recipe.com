@@ -1,0 +1,65 @@
+<%- include("../partials/_header-dashboard") %>
+
+
+
+<!-- ================ header: #Header ================  -->
+<header id="Header" class="bg-secandary">
+	<div class="container py-4 mb-4">
+		<h1>
+			<i class="fas fa-user"></i><%= user._id %>の詳細情報</h1>
+	</div><!-- /.container -->
+</header><!-- /#Header -->
+
+
+<!-- ================ section:#Dashboard-detail  ================  -->
+<section id="Dashboard-wrap" class="mb-5">
+	<div class="container">
+		<div class="row">
+
+			<!-- **** #Dashboard-detail ****  -->
+			<div class="col" id="Dashboard-detail">
+
+				<table class="table border text-nowrap">
+					<tr>
+						<th class="bg-danger text-light text-center">ユーザーID</th>
+						<td><%= user._id %></td>
+					</tr>
+					<tr>
+						<th class="bg-danger text-light text-center">苗字</th>
+						<td><%= user.name.first %></td>
+					</tr>
+					<tr>
+						<th class="bg-danger text-light text-center">名前</th>
+						<td><%= user.name.last %></td>
+					</tr>
+					<tr>
+						<th class="bg-danger text-light text-center">メールアドレス</th>
+						<td><%= user.email %></td>
+					</tr>
+					<tr>
+						<th class="bg-danger text-light text-center">既存購読者ID</th>
+						<td><%= user.subscribedAccount %></td>
+					</tr>
+					<tr>
+						<th class="bg-danger text-light text-center">アカウント作成日時</th>
+						<td><%= user.createdAt %></td>
+					</tr>
+					<tr>
+						<th class="bg-danger text-light text-center">アカウント更新日時</th>
+						<td><%= user.updatedAt %></td>
+					</tr>
+				</table>
+
+				<a href="/dashboard/users" class="btn btn-outline-secondary">ユーザー管理一覧へ戻る</a>
+				<a href="<%= `/dashboard/users/${user._id}/edit` %>" class="btn btn-outline-primary">編集</a>
+				<a href="<%= `/dashboard/users/${user._id}/delete?_method=DELETE` %>" class="btn btn-outline-danger"
+					id="DeleteBtn">削除</a>
+
+			</div>
+		</div><!-- /.col #Dashboard-list -->
+
+	</div><!-- /.row -->
+	</div><!-- /.container -->
+</section><!-- /#Dashboard-wrap (#Dashboard-list / #Sidenav-btn)  -->
+
+<%- include("../partials/_footer-dashboard") %>

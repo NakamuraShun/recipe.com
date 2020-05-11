@@ -1,0 +1,72 @@
+<%- include("../partials/_header-dashboard") %>
+
+
+
+<!-- ================ header: #Header ================  -->
+<header id="Header" class="bg-secandary">
+	<div class="container py-4 mb-4">
+		<h1>
+			<i class="fas fa-course"></i><%= course._id %>の基本情報の編集</h1>
+	</div><!-- /.container -->
+</header><!-- /#Header -->
+
+
+<!-- ================ section:#Dashboard-detail  ================  -->
+<section id="Dashboard-wrap" class="mb-5">
+	<div class="container">
+		<div class="row">
+			<!-- **** #Dashboard-detail ****  -->
+			<div class="col" id="Dashboard-detail">
+
+				<form action="<%= `/dashboard/courses/${course._id}/update?_method=PUT` %>" method="POST"
+					class="form-group">
+					<table class="table border text-nowrap">
+						<tr>
+							<th class="bg-success text-light text-center">コースID</th>
+							<td>
+								<%= course._id %>
+							</td>
+						</tr>
+						<tr>
+							<th class="bg-success text-light text-center">タイトル</th>
+							<td><input type="text" class="form-control" name="title" value="<%= course.title %>"
+									placeholder="タイトル" required>
+							</td>
+						</tr>
+						<tr>
+							<th class="bg-success text-light text-center">コース説明</th>
+							<td>
+								<textarea class="form-control" name="description" cols="30" rows="7" placeholder="コース説明"
+									required><%= course.description %></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th class="bg-success text-light text-center">材料</th>
+							<td><input type="text" class="form-control" name="items" value="<%= course.items %>"
+									placeholder="材料" required>
+							</td>
+						</tr>
+						<tr>
+							<th class="bg-success text-light text-center">応募数</th>
+							<td>
+								<%= course.users %>
+							</td>
+						</tr>
+					</table>
+					<button type="submit" class="btn btn-primary mb-4">更新</button>
+				</form>
+
+				<a href="<%= `/dashboard/courses/${course._id}` %>" class="btn btn-secondary">更新をやめる</a>
+				<a href="/dashboard/courses" class="btn btn-outline-secondary">コース情報一覧へ戻る</a>
+			</div>
+		</div><!-- /.col #Dashboard-list -->
+
+	</div><!-- /.row -->
+	</div><!-- /.container -->
+</section><!-- /#Dashboard-wrap (#Dashboard-list / #Sidenav-btn)  -->
+
+<script>
+	// Editor
+	CKEDITOR.replace("description");
+</script>
+<%- include("../partials/_footer-dashboard") %>

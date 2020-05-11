@@ -1,0 +1,128 @@
+<%- include("./partials/_header") %>
+
+
+<!-- HERO-IMG -->
+<div class="jumbotron mb-0" id="bg-jumbotron">
+
+	<!-- flashes  -->
+	<div class="container mt-1">
+		<% if(flashMsg.success){ %>
+		<div class="alert alert-success" role="alert">
+			<%= flashMsg.success %>
+			<button type="button" class="ml-2 mb-1 close" data-dismiss="alert" aria-label="閉じる">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<% }else if(flashMsg.error){ %>
+		<div class="alert alert-danger" role="alert">
+			<%= flashMsg.error %>
+			<button type="button" class="ml-2 mb-1 close" data-dismiss="alert" aria-label="閉じる">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<% } %>
+	</div>
+
+	<div class="container jumbotron-inner">
+		<div class="row">
+
+			<div class="col-lg-7 d-none d-lg-block pl-4 pt-4">
+				<p>
+					Find a wonderful recipe!
+				</p>
+				<h1 class="display-4 mb-4">
+					素敵なレシピを<br>見つけよう！
+				</h1>
+				<p class="lead">普段の献立やパーティーにも使えるお料理レシピをたくさん紹介しています！おすすめ料理をサイトに登録することもできます！</p>
+			</div>
+
+			<div class="col-lg-5 bg-danger">
+				<form action="/newregister" method="POST" class="container p-3">
+					<div class="text-center text-light py-3">
+						<h3>新規会員登録</h3>
+					</div>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<div class="input-group-text"><i class="fas fa-user"></i></div>
+						</div>
+						<input type="text" name="first" class="form-control" placeholder="苗字" required>
+					</div>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<div class="input-group-text"><i class="fas fa-user"></i></div>
+						</div>
+						<input type="text" name="last" class="form-control" placeholder="名前" required>
+					</div>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<div class="input-group-text"><i class="fas fa-envelope"></i></div>
+						</div>
+						<input type="email" name="email" class="form-control" placeholder="メールアドレス" required>
+					</div>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<div class="input-group-text"><i class="fas fa-lock"></i></div>
+						</div>
+						<input type="password" name="password" class="form-control" placeholder="パスワード" required>
+					</div>
+					<button type="submit" class="btn btn-warning border-light btn-block">
+						登録
+					</button>
+				</form>
+				<div class="text-center pb-3">
+					<a href="newsubscriber" class="text-light">メルマガのみ登録希望の方はこちら</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- ABOUT -->
+<section class="contaner-fluid bg-dark">
+	<div class="container p-1">
+		<div class="row">
+			<div class="col text-center text-light py-3">
+				<p class="lead">まずはコース情報一覧から気になるコースを探してみましょう！
+					<br>新しい料理への挑戦や自分のレシピのストックとしても活用できます！</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- FLOW -->
+<section id="#Flow">
+	<div class="container py-5">
+		<h2 class="text-center py-3">レシピ登録までの流れ</h2>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card mb-2">
+					<div class="card-body text-center">
+						<h3>会員登録</h3>
+						<p>メニューから新規会員登録をしてください。</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card mb-2">
+					<div class="card-body text-center">
+						<h3>マイページを確認</h3>
+						<p>マイページが作成されますので確認してください。</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card mb-2">
+					<div class="card-body text-center">
+						<h3>レシピを投稿</h3>
+						<p>マイページの「レシピを投稿する」から投稿してください。</p>
+					</div>
+				</div>
+			</div>
+		</div><!-- /.row -->
+	</div><!-- /.contaner -->
+</section>
+
+
+<%- include("./partials/_modal-course-list") %>
+<%- include("./partials/_footer") %>

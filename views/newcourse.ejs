@@ -1,0 +1,74 @@
+<%- include("./partials/_header") %>
+
+<!-- Page-title-area  -->
+<section id="Page-title-area" class="bg-dark mb-2">
+	<div class="container text-light page-title-area-content">
+		<h2>コースの新規登録</h2>
+	</div><!-- /.page-title-area-content -->
+</section><!-- /#Page-title-area -->
+
+<!-- flashes  -->
+<div class="container">
+	<% if(flashMsg.success){ %>
+	<div class="alert alert-success" role="alert">
+		<%= flashMsg.success %>
+		<button type="button" class="ml-2 mb-1 close" data-dismiss="alert" aria-label="閉じる">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<% }else if(flashMsg.error){ %>
+	<div class="alert alert-danger" role="alert">
+		<%= flashMsg.error %>
+		<button type="button" class="ml-2 mb-1 close" data-dismiss="alert" aria-label="閉じる">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<% } %>
+</div>
+
+<!-- registration-Form  -->
+<section id="Registration" class="container">
+	<div class="row">
+		<div class="col mx-auto">
+			<hr>
+			<p>
+				コースの新規登録には以下情報が必要です。
+			</p>
+
+			<form action="/newcourse" method="POST" class="py-3">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<div class="input-group-text"><i class="fab fa-adversal"></i></div>
+					</div>
+					<input type="text" name="title" class="form-control" placeholder="タイトル" required>
+				</div>
+				<div class="form-group mb-3">
+					<label for="description">コース説明</label>
+					<textarea class="form-control" name="description" cols="30" rows="7" maxlength="500"
+						placeholder="コース説明を500文字以内でご入力ください" required></textarea>
+
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<div class="input-group-text"><i class="fas fa-envelope"></i></div>
+					</div>
+					<input type="text" name="items" class="form-control" placeholder="材料" required>
+				</div>
+				<button type="submit" class="btn btn-success border-light btn-lg btn-block">
+					登録
+				</button>
+			</form>
+
+			<hr>
+		</div><!-- /.col -->
+	</div>
+</section>
+
+<script>
+	// Editor
+	CKEDITOR.replace("description");
+</script>
+
+
+<%- include("./partials/_modal-course-list") %>
+<%- include("./partials/_footer") %>

@@ -1,0 +1,37 @@
+p{
+  margin-bottom: 0px;
+}
+.navbar{
+  border-bottom: #4ba53a 3px solid;
+}
+
+#Navbar i{
+  color: #fff;
+}
+
+#bg-jumbotron{
+ background-image: url("../img/mv.jpg"); 
+ background-size: cover;
+ min-height: 600px;
+ margin-bottom: -2rem;
+ opacity: 0.9;
+}
+
+.jumbotron-inner{
+  padding-top: 6rem;
+}
+
+#Page-title-area {
+    position: relative;
+    min-height: 200px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.page-title-area-content{
+  min-height: 200px;
+  position: absolute;
+  top:50%;
+  text-align: center;
+
+}

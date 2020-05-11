@@ -1,0 +1,58 @@
+<%- include("../partials/_header-dashboard") %>
+
+
+<!-- ================ header: #Header ================  -->
+<header id="Header" class="bg-secandary">
+	<div class="container py-4 mb-4">
+		<h1>
+			<i class="fas fa-user"></i><%= user._id %>の基本情報の編集</h1>
+	</div><!-- /.container -->
+</header><!-- /#Header -->
+
+
+<!-- ================ section:#Dashboard-detail  ================  -->
+<section id="Dashboard-wrap" class="mb-5">
+	<div class="container">
+		<div class="row">
+			<!-- **** #Dashboard-detail ****  -->
+			<div class="col" id="Dashboard-detail">
+
+				<form action="<%= `/dashboard/users/${user._id}/update?_method=PUT` %>" method="POST"
+					class="form-group">
+					<table class="table border text-nowrap">
+						<tr>
+							<th class="bg-danger text-light text-center">ユーザーID</th>
+							<td><%= user._id %></td>
+						</tr>
+						<tr>
+							<th class="bg-danger text-light text-center">苗字</th>
+							<td><input type="text" class="form-control" name="first" value="<%= user.name.first %>"
+									placeholder="苗字" required>
+							</td>
+						</tr>
+						<tr>
+							<th class="bg-danger text-light text-center">名前</th>
+							<td><input type="text" class="form-control" name="last" value="<%= user.name.last %>"
+									placeholder="名前" required>
+							</td>
+						</tr>
+						<tr>
+							<th class="bg-danger text-light text-center">メールアドレス</th>
+							<td><input type="email" class="form-control" name="email" value="<%= user.email %>"
+									placeholder="メールアドレス" required>
+							</td>
+						</tr>
+					</table>
+					<button type="submit" class="btn btn-primary mb-4">更新</button>
+				</form>
+
+				<a href="<%= `/dashboard/users/${user._id}` %>" class="btn btn-secondary">更新をやめる</a>
+				<a href="/dashboard/users" class="btn btn-outline-secondary">ユーザー管理一覧へ戻る</a>
+			</div>
+		</div><!-- /.col #Dashboard-list -->
+
+	</div><!-- /.row -->
+	</div><!-- /.container -->
+</section><!-- /#Dashboard-wrap (#Dashboard-list / #Sidenav-btn)  -->
+
+<%- include("../partials/_footer-dashboard") %>

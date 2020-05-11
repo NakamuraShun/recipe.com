@@ -1,0 +1,49 @@
+<%- include("../partials/_header-dashboard") %>
+
+
+
+<!-- ================ header: #Header ================  -->
+<header id="Header" class="bg-secandary">
+	<div class="container py-4 mb-4">
+		<h1>
+			<i class="fas fa-rss-square"></i> <%= subscriber._id %>の詳細情報</h1>
+	</div><!-- /.container -->
+</header><!-- /#Header -->
+
+
+<!-- ================ section:#Subscriber-detail  ================  -->
+<section id="Dashboard-wrap" class="mb-5">
+	<div class="container">
+		<div class="row">
+
+			<!-- **** #Subscriber-detail ****  -->
+			<div class="col" id="Subscriber-detail">
+
+				<table class="table border text-nowrap">
+					<tr>
+						<th class="bg-warning text-light text-center">購読者ID</th>
+						<td><%= subscriber._id %></td>
+					</tr>
+					<tr>
+						<th class="bg-warning text-light text-center">氏名</th>
+						<td><%= subscriber.name %></td>
+					</tr>
+					<tr>
+						<th class="bg-warning text-light text-center">メールアドレス</th>
+						<td><%= subscriber.email %></td>
+					</tr>
+				</table>
+
+				<a href="/dashboard/subscribers" class="btn btn-outline-secondary">ユーザー管理一覧へ戻る</a>
+				<a href="<%= `/dashboard/subscribers/${subscriber._id}/edit` %>" class="btn btn-outline-primary">編集</a>
+				<a href="<%= `/dashboard/subscribers/${subscriber._id}/delete?_method=DELETE` %>"
+					class="btn btn-outline-danger" id="DeleteBtn">削除</a>
+
+			</div>
+		</div><!-- /.col #Subscriber-detail -->
+
+	</div><!-- /.row -->
+	</div><!-- /.container -->
+</section><!-- /#Dashboard-wrap -->
+
+<%- include("../partials/_footer-dashboard") %>

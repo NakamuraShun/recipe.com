@@ -1,0 +1,48 @@
+<!--**** CourseList-Modal ****-->
+
+<div class="modal fade" id="CoursesListModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-light">
+                <h5><i class="fas fa-bookmark"></i> 登録済みコース情報一覧</h5>
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div><!-- /.modal-header -->
+
+            <div class="modal-body">
+                <div class="row modal-body-inner">
+
+                </div><!-- /.row -->
+            </div><!-- /.modal-body -->
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dinalog -->
+</div><!-- /#course-edit-btn -->
+
+<script>
+
+    //CoursesList
+    $("#CoursesmodalBtn").click(() =>
+    {
+        $.get("courses/json", courses =>
+        {
+            courses.forEach(course =>
+            {
+                $(".modal-body-inner").append(
+                    `<div class="col-lg-6 mb-3">
+                        <div class="card">
+                            <div class="card-header"><strong>${course.title}</strong></div>
+                            <div class="card-body">
+                                ${course.description}
+                                <p class="mt-2">[材料]</p>
+                                ${course.items}
+                                </div>
+                        </div><!-- .card -->
+                    </div><!-- /.col -->`
+                );
+            });
+        });
+    });
+
+</script>

@@ -1,0 +1,70 @@
+<%- include("./partials/_header") %>
+
+
+<!-- Page-title-area  -->
+<section id="Page-title-area" class="bg-dark">
+	<div class="container text-light page-title-area-content">
+		<h2><i class="fas fa-envelope"></i> お問い合わせ</h2>
+	</div><!-- /.page-title-area-content -->
+</section><!-- /#Page-title-area -->
+
+<!-- flashes  -->
+<div class="container mt-1">
+	<% if(flashMsg.success){ %>
+	<div class="alert alert-success" role="alert">
+		<%= flashMsg.success %>
+		<button type="button" class="ml-2 mb-1 close" data-dismiss="alert" aria-label="閉じる">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<% }else if(flashMsg.error){ %>
+	<div class="alert alert-danger" role="alert">
+		<%= flashMsg.error %>
+		<button type="button" class="ml-2 mb-1 close" data-dismiss="alert" aria-label="閉じる">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<% } %>
+</div>
+
+<!-- Form  -->
+<section id="form" class="container py-4">
+	<hr>
+	<p class="py-3">お問い合わせデータはダッシュボード内に蓄積されます。</p>
+
+	<form method="POST" action="/contact">
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<div class="input-group-text"><i class="fas fa-user"></i></div>
+			</div>
+			<input type="text" name="name" class="form-control" placeholder="氏名" required>
+		</div>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<div class="input-group-text"><i class="fas fa-envelope"></i></div>
+			</div>
+			<input type="email" name="email" class="form-control" placeholder="メールアドレス" required>
+		</div>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<div class="input-group-text"><i class="fab fa-adversal"></i></div>
+			</div>
+			<input type="text" name="title" class="form-control" placeholder="タイトル" required>
+		</div>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<div class="input-group-text"><i class="fas fa-pencil-alt"></i></div>
+			</div>
+			<textarea class="form-control" name="coment" cols="30" rows="3" maxlength="500"
+				placeholder="お問い合わせ内容を500文字以内でご入力ください"></textarea>
+		</div>
+		<button type="submit" class="btn btn-primary btn-lg btn-block">送信</button>
+	</form>
+	<hr>
+
+</section>
+
+
+
+<%- include("./partials/_modal-course-list") %>
+<%- include("./partials/_footer") %>

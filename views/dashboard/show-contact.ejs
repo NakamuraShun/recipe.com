@@ -1,0 +1,60 @@
+<%- include("../partials/_header-dashboard") %>
+
+
+
+<!-- ================ header: #Header ================  -->
+<header id="Header" class="bg-secandary">
+	<div class="container py-4 mb-4">
+		<h1>
+			<i class="fas fa-envelope"></i> <%= contact._id %>の詳細情報</h1>
+	</div><!-- /.container -->
+</header><!-- /#Header -->
+
+
+<!-- ================ section:#Dashboard-detail  ================  -->
+<section id="Dashboard-wrap" class="mb-5">
+	<div class="container">
+		<div class="row">
+
+			<!-- **** #Dashboard-detail ****  -->
+			<div class="col" id="Dashboard-detail">
+
+				<table class="table border text-nowrap">
+					<tr>
+						<th class="bg-primary text-light text-center">受信日時</th>
+						<td><%= contact.createdAt %></td>
+					</tr>
+					<tr>
+						<th class="bg-primary text-light text-center">メールID</th>
+						<td><%= contact._id %></td>
+					</tr>
+					<tr>
+						<th class="bg-primary text-light text-center">送信者</th>
+						<td><%= contact.name %></td>
+					</tr>
+					<tr>
+						<th class="bg-primary text-light text-center">メールアドレス</th>
+						<td><%= contact.email %></td>
+					</tr>
+					<tr>
+						<th class="bg-primary text-light text-center">タイトル</th>
+						<td><%= contact.title %></td>
+					</tr>
+					<tr>
+						<th class="bg-primary text-light text-center">本文</th>
+						<td><%= contact.coment %></td>
+					</tr>
+				</table>
+
+				<a href="/dashboard/contacts" class="btn btn-outline-secondary">ユーザー管理一覧へ戻る</a>
+				<a href="<%= `/dashboard/contacts/${contact._id}/delete?_method=DELETE` %>"
+					class="btn btn-outline-danger" id="DeleteBtn">削除</a>
+
+			</div>
+		</div><!-- /.col #Dashboard-list -->
+
+	</div><!-- /.row -->
+	</div><!-- /.container -->
+</section><!-- /#Dashboard-wrap (#Dashboard-list / #Sidenav-btn)  -->
+
+<%- include("../partials/_footer-dashboard") %>
