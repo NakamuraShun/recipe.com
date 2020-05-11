@@ -9,6 +9,7 @@ const
     cookieParser = require('cookie-parser'),
     expressSession = require('express-session'),
     passport = require('passport'),
+    dotenv = require('dotenv'),
     //Controller
     homeController = require("./controllers/homeController"),
     errorController = require("./controllers/errorController"),
@@ -18,6 +19,8 @@ const
     //models
     User = require("./models/user")
     ;
+
+dotenv.config();
 
 
 //【db】
