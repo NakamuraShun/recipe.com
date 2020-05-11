@@ -34,11 +34,11 @@
         <div class="container">
             <!-- navbar-brand -->
             <a href="/" class="navbar-brand"><i class="fas fa-utensils"></i>
-                Recipe.co</a>
+                Recipe.com</a>
             <!-- CoursesmodalBtn -->
             <button class="nav-link text-dark" type="button" data-toggle="modal" data-target="#CoursesListModal"
                 id="CoursesmodalBtn">
-                <i class="fas fa-bookmark" style="color:#28a745;"></i> コース一覧</button>
+                <i class="fas fa-bookmark" style="color:#28a745;"></i> レシピ一覧</button>
             <!-- navbar-toggler -->
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
@@ -47,21 +47,17 @@
             <div id="Navbar" class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="newsubscriber" class="nav-link ml-2"><i class="fas fa-rss-square"
-                                style="color:#ffc107;"></i> メルマガ登録</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="newregistr" class="nav-link ml-2"><i class="fas fa-user" style="color:#dc3545;"></i>
-                            新規会員登録</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="contact" class="nav-link ml-2"><i class="fas fa-envelope" style="color:#007bff;"></i>
                             お問い合わせ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="newsubscriber" class="nav-link ml-2"><i class="fas fa-rss-square"
+                                style="color:#ffc107;"></i> メルマガ登録</a>
                     </li>
                     <% if(loggedIn){ %>
                     <li class="nav-item">
                         <a href="newcourse" class="nav-link"><i class="fas fa-inbox" style="color:#28a745;"></i>
-                            コースの登録</a>
+                            レシピの登録</a>
                     </li>
                     <li class="nav-item">
                         <a href="logout" class="nav-link btn btn-outline-secondary text-light"><i
@@ -69,6 +65,10 @@
                             <span class="text-primary"><small><%= currentUser.email %></small></span> からログアウト</a>
                     </li>
                     <% }else{ %>
+                    <li class="nav-item">
+                        <a href="newregistr" class="nav-link ml-2"><i class="fas fa-user" style="color:#dc3545;"></i>
+                            新規会員登録</a>
+                    </li>
                     <li class="nav-item">
                         <a href="login" class="nav-link btn btn-outline-secondary text-light"><i
                                 class="fas fa-sign-in-alt" style="color:#fff;"></i>

@@ -21,7 +21,7 @@
 
 				<table class="table border text-nowrap">
 					<tr>
-						<th class="bg-success text-light text-center">コースID</th>
+						<th class="bg-success text-light text-center">レシピID</th>
 						<td><%= course._id %></td>
 					</tr>
 					<tr>
@@ -29,7 +29,7 @@
 						<td><%= course.title %></td>
 					</tr>
 					<tr>
-						<th class="bg-success text-light text-center">コース説明</th>
+						<th class="bg-success text-light text-center">レシピ説明</th>
 						<td>
 							<textarea class="form-control" name="description" cols="30" rows="7" placeholder="コース説明"
 								disabled><%= course.description %></textarea>
@@ -41,7 +41,7 @@
 					</tr>
 				</table>
 
-				<a href="/dashboard/courses" class="btn btn-outline-secondary">コース情報一覧へ戻る</a>
+				<a href="/dashboard/courses" class="btn btn-outline-secondary">レシピ情報一覧へ戻る</a>
 				<a href="<%= `/dashboard/courses/${course._id}/edit` %>" class="btn btn-outline-primary">編集</a>
 				<a href="<%= `/dashboard/courses/${course._id}/delete?_method=DELETE` %>"
 					class="btn btn-outline-danger">削除</a>

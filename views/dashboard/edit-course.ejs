@@ -22,7 +22,7 @@
 					class="form-group">
 					<table class="table border text-nowrap">
 						<tr>
-							<th class="bg-success text-light text-center">コースID</th>
+							<th class="bg-success text-light text-center">レシピID</th>
 							<td>
 								<%= course._id %>
 							</td>
@@ -34,9 +34,9 @@
 							</td>
 						</tr>
 						<tr>
-							<th class="bg-success text-light text-center">コース説明</th>
+							<th class="bg-success text-light text-center">レシピ説明</th>
 							<td>
-								<textarea class="form-control" name="description" cols="30" rows="7" placeholder="コース説明"
+								<textarea class="form-control" name="description" cols="30" rows="7" placeholder="レシピ説明"
 									required><%= course.description %></textarea>
 							</td>
 						</tr>
@@ -57,7 +57,7 @@
 				</form>
 
 				<a href="<%= `/dashboard/courses/${course._id}` %>" class="btn btn-secondary">更新をやめる</a>
-				<a href="/dashboard/courses" class="btn btn-outline-secondary">コース情報一覧へ戻る</a>
+				<a href="/dashboard/courses" class="btn btn-outline-secondary">レシピ情報一覧へ戻る</a>
 			</div>
 		</div><!-- /.col #Dashboard-list -->
 
