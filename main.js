@@ -42,7 +42,7 @@ mongoose.connect(
     {
         if (error)
         {
-            console.log(err);
+            console.log(error);
         } else
         {
             console.log("DBに接続できない。")
