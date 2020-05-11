@@ -58,9 +58,9 @@ router.use(methodOverride("_method", { methods: ["POST", "GET"] }));
 router.use(cookieParser("secret_passcode"));
 router.use(expressSession({
     secret: "secret_passcode",
-    cookie: {
-        maxAge: 4000000
-    },
+    // cookie: {
+    //     maxAge: 4000000
+    // },
     resave: false,
     saveUninitialized: false
 }));
