@@ -34,7 +34,7 @@ dotenv.config();
 
 //heroku用
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/recipe_db", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/recipe_db", { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 db.once("open", () => { console.log("MongoDBに接続完了") });
@@ -59,6 +59,7 @@ router.use(methodOverride("_method", { methods: ["POST", "GET"] }));
 
 //cookie,Session,flash
 router.use(cookieParser("secret_passcode"));
+
 router.use(expressSession({
     secret: "secret_passcode",
     // cookie: {
