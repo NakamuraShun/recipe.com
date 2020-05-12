@@ -20,6 +20,22 @@ module.exports = {
     },
 
 
+    showList: (req, res, next) =>
+    {
+        Course.find({})
+            .then(courses =>
+            {
+                res.render("/courses", { "courses": courses });
+
+            })
+            .catch(error =>
+            {
+                console.log("error.message");
+                return [];
+            })
+    },
+
+
 
     getAllByJson: (req, res, next) =>
     {
