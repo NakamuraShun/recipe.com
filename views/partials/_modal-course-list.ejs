@@ -22,7 +22,7 @@
 <script>
 
     //CoursesList
-    $("#CoursesmodalBtn").click(() =>
+    $("#CoursesmodalBtn").one("click", function ()
     {
         $.get("courses/json", courses =>
         {
