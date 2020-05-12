@@ -5,7 +5,7 @@
 <!-- ================ header: #Header ================  -->
 <header id="Header" class="bg-secandary">
 	<div class="container py-4 mb-4">
-		<h1 class="mt-4">
+		<h1 class="mt-4" style="word-break: break-all;">
 			<i class="fas fa-user" style="color:#dc3545;"></i> <%= user._id %> 情報</h1>
 	</div><!-- /.container -->
 </header><!-- /#Header -->
@@ -42,11 +42,15 @@
 					</tr>
 					<tr>
 						<th class="bg-danger text-light text-center">アカウント作成日時</th>
-						<td><%= user.createdAt %></td>
+						<div style="word-break: break-all;">
+							<td><%= user.createdAt %></td>
+						</div>
 					</tr>
 					<tr>
 						<th class="bg-danger text-light text-center">アカウント更新日時</th>
-						<td><%= user.updatedAt %></td>
+						<div style="word-break: break-all;">
+							<td><%= user.updatedAt %></td>
+						</div>
 					</tr>
 				</table>
 
