@@ -1,61 +1,47 @@
-<div class="modalwindow js-modal">
-    <div class="modal__bg js-modal-close"></div>
-    <div class="modal__content">
-        <div class="card">
-            <div class="card-header bg-success text-light">
-                <h5><i class="fas fa-bookmark"></i> 登録済みコース情報一覧</h5>
-            </div><!-- /.card-header -->
+<!--**** CourseList-Modal ****-->
+<div class="modal fade" id="CoursesListModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-light">
+                <h5><i class="fas fa-bookmark"></i> 登録済みレシピ一覧</h5>
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div><!-- /.modal-header -->
 
-            <div class="card-body">
-                <div class="row card-body-inner">
+            <div class="modal-body">
+                <div class="row modal-body-inner">
 
                 </div><!-- /.row -->
-            </div><!-- /.card-body -->
-        </div><!-- /.card -->
-    </div>
-    <!--modal__content-->
-</div>
-<!--modal-->
+            </div><!-- /.modal-body -->
 
-
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dinalog -->
+</div><!-- /#course-edit-btn -->
 
 <script>
-    //modal
-    $(function ()
-    {
-        $('.js-modal-open').on('click', function ()
-        {
-            $('.js-modal').fadeIn();
-            return false;
-        });
-        $('.js-modal-close').on('click', function ()
-        {
-            $('.js-modal').fadeOut();
-            return false;
-        });
-    });
 
-
-    //modal-content
-    $("#CoursesmodalBtn").one("click", function ()
+    //CoursesList
+    $("#CoursesmodalBtn").click(() =>
     {
         $.get("courses/json", courses =>
         {
             courses.forEach(course =>
             {
-                $(".card-body-inner").append(
+                $(".modal-body-inner").append(
                     `<div class="col-lg-6 mb-3">
-                                <div class="card">
-                                    <div class="card-header"><strong>${course.title}</strong></div>
-                                    <div class="card-body">
-                                        ${course.description}
-                                        <p class="mt-2">[材料]</p>
-                                        ${course.items}
-                                        </div>
-                                </div><!-- .card -->
-                            </div><!-- /.col -->`
+                            <div class="card">
+                                <div class="card-header"><strong>${course.title}</strong></div>
+                                <div class="card-body">
+                                    ${course.description}
+                                    <p class="mt-2">[材料]</p>
+                                    ${course.items}
+                                    </div>
+                            </div><!-- .card -->
+                        </div><!-- /.col -->`
                 );
             });
         });
     });
+
 </script>
