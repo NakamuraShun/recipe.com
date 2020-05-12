@@ -3,7 +3,7 @@
 <!-- Page-title-area  -->
 <section id="Page-title-area" class="bg-dark mb-2">
 	<div class="container text-light page-title-area-content">
-		<h2>レシピの新規登録</h2>
+		<h2><i class="fas fa-inbox" style="color:#28a745;"></i> レシピ登録</h2>
 	</div><!-- /.page-title-area-content -->
 </section><!-- /#Page-title-area -->
 
@@ -27,12 +27,13 @@
 </div>
 
 <!-- registration-Form  -->
-<section id="Registration" class="container">
+<section id="Registration" class="container mb-4">
+	<hr>
 	<div class="row">
 		<div class="col mx-auto">
-			<hr>
-			<p>
-				レシピの新規登録には以下情報が必要です。
+			<p class="py-3">
+				仕様補足：登録データは<a href="/dashboard/courses"></a>ダッシュボード</a>で確認できます。<br>
+				登録後、グローバルナビのレシピ一覧で内容を確認できます。
 			</p>
 
 			<form action="/newcourse" method="POST" class="py-3">
@@ -55,7 +56,7 @@
 					<input type="text" name="items" class="form-control" placeholder="材料" required>
 				</div>
 				<button type="submit" class="btn btn-success border-light btn-lg btn-block">
-					登録
+					レシピ登録
 				</button>
 			</form>
 

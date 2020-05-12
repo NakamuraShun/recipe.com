@@ -78,54 +78,65 @@
 	</div>
 </div>
 
-<!-- ABOUT -->
-<section class="contaner-fluid bg-dark">
-	<div class="container p-1">
-		<div class="row">
-			<div class="col text-center text-light py-3">
-				<p class="lead">まずはコース情報一覧から気になるコースを探してみましょう！
-					<br>新しい料理への挑戦や自分のレシピのストックとしても活用できます！</p>
-			</div>
-		</div>
-	</div>
-</section>
 
-<!-- FLOW -->
-<section id="#Flow">
+<!-- Info -->
+<section id="Info">
 	<div class="container py-5">
-		<h2 class="text-center py-3">レシピ登録までの流れ</h2>
 		<div class="row">
-			<div class="col-md-4">
-				<div class="card mb-2">
-					<div class="card-body text-center">
-						<h3>会員登録</h3>
-						<p>メニューから新規会員登録をしてください。</p>
-					</div>
-				</div>
+			<div class="col-md-6 my-4">
+				<h3>Recipe.comとは？</h3>
+				<p class="pb-3">
+					インターネットで手軽に料理のレシピを見ることができます。会員登録することで自分のオリジナルレシピを投稿することもできます！
+					毎日の献立を考えるのって中々大変ですよね。Recipe.comでは主婦の方や社会人、また学生さんなど、幅広い方々にも投稿いただいているので今日のあなたにあったレシピがきっと見つかるはず。<br>
+					今後は、会員のマイページでレシピの登録機能やメルマガ配信など便利な機能を盛り込んでいく予定なので今後ともよろしくお願いします！
+				</p>
+				<a href="newregistr" class="btn btn-danger btn-lg">新規会員登録</a>
 			</div>
-			<div class="col-md-4">
-				<div class="card mb-2">
-					<div class="card-body text-center">
-						<h3>マイページを確認</h3>
-						<p>マイページが作成されますので確認してください。</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="card mb-2">
-					<div class="card-body text-center">
-						<h3>レシピを投稿</h3>
-						<p>マイページの「レシピを投稿する」から投稿してください。</p>
-					</div>
-				</div>
+			<div class="col-md-6">
+				<img src="img/about.jpg" class="img-fluid">
 			</div>
 		</div><!-- /.row -->
 	</div><!-- /.contaner -->
 </section>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-	integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-	crossorigin="anonymous"></script>
+
+<!-- Specification -->
+<section id="Specification" class="bg-dark text-light">
+	<div class="container py-5">
+		<div class="row">
+			<div class="col-md-6">
+				<img src="img/node.jpeg" class="img-fluid">
+			</div>
+			<div class="col-md-6 my-4">
+				<h3>サイトの仕様や言語について</h3>
+				<p class="pb-3">
+					<p>■ 仕様</p>
+					CRUD機能、MVCモデル、ログイン機能、認証機能
+					<p>■ 言語</p>
+					・バックエンド
+					　Node.js,express,MongoDB,mongoose,passport.js,( Ajax )
+					・フロントエンド
+					　Bootstrap
+					<p>■ その他</p>
+					Git,heroku
+				</p>
+			</div>
+		</div><!-- /.row -->
+	</div><!-- /.contaner -->
+</section>
+
+<!-- contact -->
+<section id="Contact-section" class="mb-4">
+	<div class="container py-5">
+		<div class="row">
+			<div class="col text-center">
+				<h3>お問い合わせ</h2>
+					<p class="lead">サイトについてご質問などございましたらお気軽にお問い合わせください。</p>
+					<a href="contact" class="btn btn-primary border-light"><i class="fas fa-envelope w-25"></i></a>
+			</div>
+		</div>
+	</div>
+</section>
 
 <%- include("./partials/_modal-course-list") %>
 <%- include("./partials/_footer") %>

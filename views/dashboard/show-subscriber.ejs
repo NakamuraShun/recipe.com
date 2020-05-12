@@ -6,7 +6,7 @@
 <header id="Header" class="bg-secandary">
 	<div class="container py-4 mb-4">
 		<h1>
-			<i class="fas fa-rss-square"></i> <%= subscriber._id %>の詳細情報</h1>
+			<i class="fas fa-rss-square" style="color:#ffc107;"></i> <%= subscriber._id %>の情報</h1>
 	</div><!-- /.container -->
 </header><!-- /#Header -->
 
@@ -34,7 +34,7 @@
 					</tr>
 				</table>
 
-				<a href="/dashboard/subscribers" class="btn btn-outline-secondary">ユーザー管理一覧へ戻る</a>
+				<a href="/dashboard/subscribers" class="btn btn-outline-secondary">メルマガ登録の情報一覧へ戻る</a>
 				<a href="<%= `/dashboard/subscribers/${subscriber._id}/edit` %>" class="btn btn-outline-primary">編集</a>
 				<a href="<%= `/dashboard/subscribers/${subscriber._id}/delete?_method=DELETE` %>"
 					class="btn btn-outline-danger" id="DeleteBtn">削除</a>

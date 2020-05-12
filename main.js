@@ -24,7 +24,6 @@ dotenv.config();
 
 
 //【db】
-
 //local用(back)
 // const mongoose = require("mongoose");
 // mongoose.connect("mongodb://localhost:27017/recipe_db", { useNewUrlParser: true });
@@ -45,7 +44,7 @@ mongoose.connect(
             console.log(error);
         } else
         {
-            console.log("DBに接続できない。")
+            console.log("DB接続不可")
         }
     });
 

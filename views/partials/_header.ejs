@@ -5,13 +5,15 @@
     <meta charset="utf-8">
     <!-- viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- title -->
+    <title>レシピ共有.com</title>
+    <!-- fontawesome -->
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
         integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
     <link href="./css/style.css" rel="stylesheet">
-    <!-- fontawesome -->
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <!-- script -->
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -23,8 +25,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
     <script type="text/javascript" src="/js/recipeApp.js"></script>
-    <!-- title -->
-    <title>レシピ共有.com</title>
+
 </head>
 
 
@@ -57,10 +58,10 @@
                     <% if(loggedIn){ %>
                     <li class="nav-item">
                         <a href="newcourse" class="nav-link ml-2"><i class="fas fa-inbox" style="color:#28a745;"></i>
-                            レシピの登録</a>
+                            レシピ登録</a>
                     </li>
                     <li class="nav-item">
-                        <a href="logout" class="nav-link btn btn-outline-secondary text-light ml-2"><i
+                        <a href="logout" class="nav-link btn btn-outline-secondary text-light ml-3"><i
                                 class="fas fa-sign-out-alt" style="color:#fff;"></i>
                             <span class="text-primary"><small><%= currentUser.email %></small></span> からログアウト</a>
                     </li>
@@ -70,7 +71,7 @@
                             新規会員登録</a>
                     </li>
                     <li class="nav-item">
-                        <a href="login" class="nav-link btn btn-outline-secondary text-light ml-2"><i
+                        <a href="login" class="nav-link btn btn-outline-secondary text-light ml-3"><i
                                 class="fas fa-sign-in-alt" style="color:#fff;"></i>
                             ログイン</a>
                     </li>
