@@ -18,22 +18,22 @@
 
 			<!-- **** #Subscriber-detail ****  -->
 			<div class="col" id="Subscriber-detail">
-
-				<table class="table border text-nowrap">
-					<tr>
-						<th class="bg-warning text-light text-center">購読者ID</th>
-						<td><%= subscriber._id %></td>
-					</tr>
-					<tr>
-						<th class="bg-warning text-light text-center">氏名</th>
-						<td><%= subscriber.name %></td>
-					</tr>
-					<tr>
-						<th class="bg-warning text-light text-center">メールアドレス</th>
-						<td><%= subscriber.email %></td>
-					</tr>
-				</table>
-
+				<div class="table-responsive">
+					<table class="table border text-nowrap">
+						<tr>
+							<th class="bg-warning text-light text-center">購読者ID</th>
+							<td><%= subscriber._id %></td>
+						</tr>
+						<tr>
+							<th class="bg-warning text-light text-center">氏名</th>
+							<td><%= subscriber.name %></td>
+						</tr>
+						<tr>
+							<th class="bg-warning text-light text-center">メールアドレス</th>
+							<td><%= subscriber.email %></td>
+						</tr>
+					</table>
+				</div>
 				<a href="/dashboard/subscribers" class="btn btn-outline-secondary">メルマガ登録の情報一覧へ戻る</a>
 				<a href="<%= `/dashboard/subscribers/${subscriber._id}/edit` %>" class="btn btn-outline-primary">編集</a>
 				<a href="<%= `/dashboard/subscribers/${subscriber._id}/delete?_method=DELETE` %>"

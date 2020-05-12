@@ -18,35 +18,36 @@
 
 			<!-- **** #Dashboard-detail ****  -->
 			<div class="col" id="Dashboard-detail">
-
-				<table class="table border text-nowrap">
-					<tr>
-						<th class="bg-primary text-light text-center">受信日時</th>
-						<div style="word-break: break-all;">
-							<td><%= contact.createdAt %></td>
-						</div>
-					</tr>
-					<tr>
-						<th class="bg-primary text-light text-center">メールID</th>
-						<td><%= contact._id %></td>
-					</tr>
-					<tr>
-						<th class="bg-primary text-light text-center">送信者</th>
-						<td><%= contact.name %></td>
-					</tr>
-					<tr>
-						<th class="bg-primary text-light text-center">メールアドレス</th>
-						<td><%= contact.email %></td>
-					</tr>
-					<tr>
-						<th class="bg-primary text-light text-center">タイトル</th>
-						<td><%= contact.title %></td>
-					</tr>
-					<tr>
-						<th class="bg-primary text-light text-center">本文</th>
-						<td><%= contact.coment %></td>
-					</tr>
-				</table>
+				<div class="table-responsive">
+					<table class="table border text-nowrap">
+						<tr>
+							<th class="bg-primary text-light text-center">受信日時</th>
+							<div style="word-break: break-all;">
+								<td><%= contact.createdAt %></td>
+							</div>
+						</tr>
+						<tr>
+							<th class="bg-primary text-light text-center">メールID</th>
+							<td><%= contact._id %></td>
+						</tr>
+						<tr>
+							<th class="bg-primary text-light text-center">送信者</th>
+							<td><%= contact.name %></td>
+						</tr>
+						<tr>
+							<th class="bg-primary text-light text-center">メールアドレス</th>
+							<td><%= contact.email %></td>
+						</tr>
+						<tr>
+							<th class="bg-primary text-light text-center">タイトル</th>
+							<td><%= contact.title %></td>
+						</tr>
+						<tr>
+							<th class="bg-primary text-light text-center">本文</th>
+							<td><%= contact.coment %></td>
+						</tr>
+					</table>
+				</div>
 
 				<a href="/dashboard/contacts" class="btn btn-outline-secondary">ユーザー管理一覧へ戻る</a>
 				<a href="<%= `/dashboard/contacts/${contact._id}/delete?_method=DELETE` %>"

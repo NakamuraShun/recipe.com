@@ -18,29 +18,29 @@
 
 			<!-- **** #Dashboard-detail ****  -->
 			<div class="col" id="Dashboard-detail">
-
-				<table class="table border text-nowrap">
-					<tr>
-						<th class="bg-success text-light text-center">レシピID</th>
-						<td><%= course._id %></td>
-					</tr>
-					<tr>
-						<th class="bg-success text-light text-center">タイトル</th>
-						<td><%= course.title %></td>
-					</tr>
-					<tr>
-						<th class="bg-success text-light text-center">レシピ説明</th>
-						<td>
-							<textarea class="form-control" name="description" cols="30" rows="7" placeholder="コース説明"
-								disabled><%= course.description %></textarea>
-						</td>
-					</tr>
-					<tr>
-						<th class="bg-success text-light text-center">材料</th>
-						<td><%= course.items %></td>
-					</tr>
-				</table>
-
+				<div class="table-responsive">
+					<table class="table border text-nowrap">
+						<tr>
+							<th class="bg-success text-light text-center">レシピID</th>
+							<td><%= course._id %></td>
+						</tr>
+						<tr>
+							<th class="bg-success text-light text-center">タイトル</th>
+							<td><%= course.title %></td>
+						</tr>
+						<tr>
+							<th class="bg-success text-light text-center">レシピ説明</th>
+							<td>
+								<textarea class="form-control" name="description" cols="30" rows="7" placeholder="コース説明"
+									disabled><%= course.description %></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th class="bg-success text-light text-center">材料</th>
+							<td><%= course.items %></td>
+						</tr>
+					</table>
+				</div>
 				<a href="/dashboard/courses" class="btn btn-outline-secondary">レシピ情報一覧へ戻る</a>
 				<a href="<%= `/dashboard/courses/${course._id}/edit` %>" class="btn btn-outline-primary">編集</a>
 				<a href="<%= `/dashboard/courses/${course._id}/delete?_method=DELETE` %>"

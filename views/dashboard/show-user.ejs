@@ -18,41 +18,38 @@
 
 			<!-- **** #Dashboard-detail ****  -->
 			<div class="col" id="Dashboard-detail">
-
-				<table class="table border text-nowrap" style="word-break: break-all;">
-					<tr>
-						<th class="bg-danger text-light text-center">ユーザーID</th>
-						<td><%= user._id %></td>
-					</tr>
-					<tr>
-						<th class="bg-danger text-light text-center">苗字</th>
-						<td><%= user.name.first %></td>
-					</tr>
-					<tr>
-						<th class="bg-danger text-light text-center">名前</th>
-						<td><%= user.name.last %></td>
-					</tr>
-					<tr>
-						<th class="bg-danger text-light text-center">メールアドレス</th>
-						<td><%= user.email %></td>
-					</tr>
-					<tr>
-						<th class="bg-danger text-light text-center">既存購読者ID</th>
-						<td><%= user.subscribedAccount %></td>
-					</tr>
-					<tr>
-						<th class="bg-danger text-light text-center">アカウント作成日時</th>
-						<div style="word-break: break-all;">
+				<div class="table-responsive">
+					<table class="table border text-nowrap">
+						<tr>
+							<th class="bg-danger text-light text-center">ユーザーID</th>
+							<td><%= user._id %></td>
+						</tr>
+						<tr>
+							<th class="bg-danger text-light text-center">苗字</th>
+							<td><%= user.name.first %></td>
+						</tr>
+						<tr>
+							<th class="bg-danger text-light text-center">名前</th>
+							<td><%= user.name.last %></td>
+						</tr>
+						<tr>
+							<th class="bg-danger text-light text-center">メールアドレス</th>
+							<td><%= user.email %></td>
+						</tr>
+						<tr>
+							<th class="bg-danger text-light text-center">既存購読者ID</th>
+							<td><%= user.subscribedAccount %></td>
+						</tr>
+						<tr>
+							<th class="bg-danger text-light text-center">アカウント作成日時</th>
 							<td><%= user.createdAt %></td>
-						</div>
-					</tr>
-					<tr>
-						<th class="bg-danger text-light text-center">アカウント更新日時</th>
-						<div style="word-break: break-all;">
+						</tr>
+						<tr>
+							<th class="bg-danger text-light text-center">アカウント更新日時</th>
 							<td><%= user.updatedAt %></td>
-						</div>
-					</tr>
-				</table>
+						</tr>
+					</table>
+				</div>
 
 				<a href="/dashboard/users" class="btn btn-outline-secondary">ユーザー管理一覧へ戻る</a>
 				<a href="<%= `/dashboard/users/${user._id}/edit` %>" class="btn btn-outline-primary">編集</a>
