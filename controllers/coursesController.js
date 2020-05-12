@@ -25,7 +25,7 @@ module.exports = {
         Course.find({})
             .then(courses =>
             {
-                res.render("/courses", { "courses": courses });
+                res.render("courses", { "courses": courses });
 
             })
             .catch(error =>
