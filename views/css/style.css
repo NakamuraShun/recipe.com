@@ -14,11 +14,10 @@ p{
  background-size: cover;
  min-height: 600px;
  margin-bottom: -2rem;
- opacity: 0.9;
 }
 
 .jumbotron-inner{
-  padding-top: 6rem;
+  padding-top: 2rem;
 }
 
 #Page-title-area {
@@ -33,4 +32,146 @@ p{
   top:50%;
   text-align: center;
 
+}
+
+
+
+/* Nav2 */
+
+#global-navi {
+    background:#333;
+    position: fixed;
+    top: 0;
+    right: 0px;
+    width: 100%;
+    z-index: 2
+}
+#Navbar nav ul li{
+display:inline-block;
+font-size: 16px;
+}
+#Navbar nav ul li a{
+color: #ddd
+}
+
+#global-navi .logo{
+  font-size: 16px;
+}
+/*スマホ画面で例１のハンバーガーメニューの形にする*/
+@media screen and (max-width: 768px) {
+#Navbar nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    padding-top: 50px;
+    background:#333;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+#Navbar nav ul li {
+    display:block;
+    padding: 15px 28px
+}
+ 
+#Navbar nav ul li a {
+    text-decoration: none;
+    color: #ddd
+}
+
+
+ 
+#Navbar .btn-gnavi {
+    position: fixed;
+    z-index: 3;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 24px;
+    z-index: 3;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-transition: all 400ms;
+    transition: all 400ms
+}
+ 
+#Navbar .btn-gnavi span {
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background: #666;
+    border-radius: 10px;
+    -webkit-transition: all 400ms;
+    transition: all 400ms
+}
+ 
+#Navbar .btn-gnavi span:nth-child(1) {
+    top: 0
+}
+ 
+#Navbar .btn-gnavi span:nth-child(2) {
+    top: 10px
+}
+ 
+#Navbar .btn-gnavi span:nth-child(3) {
+    top: 20px
+}
+ 
+#Navbar .btn-gnavi.open {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+ ƒ
+#Navbar .btn-gnavi.open span {
+    background: #fff
+}
+ 
+#Navbar .btn-gnavi.open span {
+    width: 24px;
+}
+#Navbar .contents section p {
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    line-height: 1.4;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 0 0 6px #666
+}
+ 
+#Navbar .contents section:nth-child(odd) p {
+    left: 10%
+}
+ 
+#Navbar .contents section:nth-child(even) p {
+    right: 10%
+}
+}
+
+
+
+/* modal */
+
+.modalwindow{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.modal__bg{
+    background: rgba(0,0,0,0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+.modal__content{
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
 }

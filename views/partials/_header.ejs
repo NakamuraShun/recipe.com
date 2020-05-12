@@ -35,56 +35,91 @@
 
 
 
-
+<!-- Nav2 -->
 
 <body>
-    <!-- Nav  -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <!-- navbar-brand -->
-            <a href="/" class="navbar-brand"><i class="fas fa-utensils"></i>
-                Recipe.com</a>
-            <!-- CoursesmodalBtn -->
-            <button class="nav-link text-dark" type="button" data-toggle="modal" data-target="#CoursesListModal"
-                id="CoursesmodalBtn">
-                <i class="fas fa-bookmark" style="color:#28a745;"></i> レシピ一覧</button>
-            <!-- navbar-toggler -->
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- navbar-collapse -->
-            <div id="Navbar" class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="contact" class="nav-link ml-2"><i class="fas fa-envelope" style="color:#007bff;"></i>
-                            お問い合わせ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="newsubscriber" class="nav-link ml-2"><i class="fas fa-rss-square"
-                                style="color:#ffc107;"></i> メルマガ登録</a>
-                    </li>
-                    <% if(loggedIn){ %>
-                    <li class="nav-item">
-                        <a href="newcourse" class="nav-link ml-2"><i class="fas fa-inbox" style="color:#28a745;"></i>
-                            レシピ登録</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="logout" class="nav-link btn btn-outline-secondary text-light ml-3"><i
-                                class="fas fa-sign-out-alt" style="color:#fff;"></i>
-                            <span class="text-primary"><small><%= currentUser.email %></small></span> からログアウト</a>
-                    </li>
-                    <% }else{ %>
-                    <li class="nav-item">
-                        <a href="newregistr" class="nav-link ml-2"><i class="fas fa-user" style="color:#dc3545;"></i>
-                            新規会員登録</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="login" class="nav-link btn btn-outline-secondary text-light ml-3"><i
-                                class="fas fa-sign-in-alt" style="color:#fff;"></i>
-                            ログイン</a>
-                    </li>
-                    <% } %>
-                </ul>
+    <div id="Navbar">
+        <div id="global-navi" class="navbar">
+            <div class="container">
+
+                <div class="menu-brand">
+                    <!-- navbar-brand -->
+                    <a href="/" class="text-light logo"><i class="fas fa-utensils"></i> Recipe.com</a>
+                    <!-- CoursesmodalBtn -->
+                    <button class="nav-link text-dark ml-2 js-modal-open" type="button" data-toggle="modal"
+                        data-target="#CoursesListModal" id="CoursesmodalBtn" style="display: inline-block;">
+                        <i class="fas fa-bookmark" style="color:#28a745;"></i> レシピ一覧</button>
+                </div>
+
+                <p class="btn-gnavi">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </p>
+
+                <nav id="Gnavi">
+                    <ul class="menu-list mb-0">
+                        <li class="nav-item">
+                            <a href="contact" class="nav-link ml-2"><i class="fas fa-envelope"
+                                    style="color:#007bff;"></i>
+                                お問い合わせ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="newsubscriber" class="nav-link ml-2"><i class="fas fa-rss-square"
+                                    style="color:#ffc107;"></i> メルマガ登録</a>
+                        </li>
+                        <% if(loggedIn){ %>
+                        <li class="nav-item">
+                            <a href="newcourse" class="nav-link ml-2"><i class="fas fa-inbox"
+                                    style="color:#28a745;"></i>
+                                レシピ登録</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="logout" class="nav-link btn btn-outline-secondary text-light ml-3"><i
+                                    class="fas fa-sign-out-alt" style="color:#fff;"></i>
+                                <span class="text-primary"><small><%= currentUser.email %></small></span> からログアウト</a>
+                        </li>
+                        <% }else{ %>
+                        <li class="nav-item">
+                            <a href="newregistr" class="nav-link ml-2"><i class="fas fa-user"
+                                    style="color:#dc3545;"></i>
+                                新規会員登録</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login" class="nav-link btn btn-outline-secondary text-light ml-3"><i
+                                    class="fas fa-sign-in-alt" style="color:#fff;"></i>
+                                ログイン</a>
+                        </li>
+                        <% } %>
+                    </ul>
+                </nav>
             </div>
         </div>
-    </nav>
+    </div>
+
+
+    <script>
+        $(function ()
+        {
+            $(".btn-gnavi").on("click", function ()
+            {
+                // ハンバーガーメニューの位置を設定
+                let rightVal = 0;
+                if ($("#Gnavi").hasClass("open"))
+                {
+                    // 位置を移動させメニューを開いた状態にする
+                    rightVal = -300;
+                    // メニューを開いたら次回クリック時は閉じた状態になるよう設定
+                    $("#Gnavi").removeClass("open");
+                } else
+                {
+                    // メニューを開いたら次回クリック時は閉じた状態になるよう設定
+                    $(this).addClass("open");
+                }
+
+                $("#Gnavi").stop().animate({
+                    right: rightVal
+                }, 200);
+            });
+        });
+    </script>
