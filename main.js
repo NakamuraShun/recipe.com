@@ -25,31 +25,31 @@ dotenv.config();
 
 //【db】
 //local用(back)
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/recipe_db", { useNewUrlParser: true });
-mongoose.Promise = global.Promise;
-const db = mongoose.connection;
-db.once("open", () => { console.log("MongoDBに接続完了") });
-
-//heroku用
 // const mongoose = require("mongoose");
+// mongoose.connect("mongodb://localhost:27017/recipe_db", { useNewUrlParser: true });
 // mongoose.Promise = global.Promise;
-// mongoose.connect(
-//     process.env.MONGODB_URI || "mongodb://localhost:27017/recipe_db",
-//     { useNewUrlParser: true, useUnifiedTopology: true },
-//     error =>
-//     {
-//         if (error)
-//         {
-//             console.log(error);
-//         } else
-//         {
-//             console.log("DB接続不可")
-//         }
-//     });
-
 // const db = mongoose.connection;
 // db.once("open", () => { console.log("MongoDBに接続完了") });
+
+//heroku用
+const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost:27017/recipe_db",
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    error =>
+    {
+        if (error)
+        {
+            console.log(error);
+        } else
+        {
+            console.log("DB接続不可")
+        }
+    });
+
+const db = mongoose.connection;
+db.once("open", () => { console.log("MongoDBに接続完了") });
 
 
 
@@ -152,11 +152,11 @@ router.use(errorController.respond500);
 //【接続】
 
 //local用(back)
-app.listen(port, () => { console.log(`${port}で接続中…`); });
+// app.listen(port, () => { console.log(`${port}で接続中…`); });
 
 //heroku用
-// app.set("port", process.env.PORT || 3000);
-// const server = app.listen(app.get("port"), () =>
-// {
-//     console.log(`Saever running at http://localhost:${app.get("port")}`)
-// });
+app.set("port", process.env.PORT || 3000);
+const server = app.listen(app.get("port"), () =>
+{
+    console.log(`Saever running at http://localhost:${app.get("port")}`)
+});
